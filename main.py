@@ -2,7 +2,22 @@ from replit import db
 import random
 import time
 
-unsortedList = [(random.randint(0, 1000)) for i in range(100000)]
+
+def variables():
+  pass
+
+
+def game():
+  pass
+
+
+def leaderboard():
+  for i in db:
+    print(f'{i.split().pop(0)}      {db[i]}')
+
+
+def database(name, value):
+  db[f'{time.time()} {name}'] = value
 
 
 def quicksort(list):
@@ -15,5 +30,9 @@ def quicksort(list):
     for item in sublist
   ]
 
-
-print(quicksort(unsortedList))
+database('Axel1', [3, 1, 6, 8, 1])
+database('Axel2', [2, 3, 3, 4, 6])
+database('Axel3', [4, 2, 7, 2, 5])
+database('Axel4', [36, 16, 4, 2, 5])
+database('Axel5', [8, 5, 7, 7, 2])
+leaderboard()
